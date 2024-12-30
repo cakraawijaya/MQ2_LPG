@@ -1,18 +1,17 @@
-========================================
- CREATOR OF MQ2 LPG LIBRARY
-========================================
- By: Devan Cakra M.W
+#######################################
+# MQ2_LPG_Library by Devan Cakra M.W
+####################################### 
 
+#######################################
+# CLASS
+#######################################
 
-========================================
- CLASS
-========================================
  MQ2Sensor		KEYWORD1
 
+#######################################
+# FUNCTIONS
+#######################################
 
-========================================
-FUNCTIONS
-========================================
  begin			KEYWORD2
  RL			KEYWORD2
  Ro			KEYWORD2
@@ -27,23 +26,3 @@ FUNCTIONS
  bCurve 		KEYWORD2
  readGas		KEYWORD2
  viewGasData		KEYWORD2
-
-
-========================================
-VARIABLES
-========================================
- _pin			KEYWORD3
- _RL 			KEYWORD3
- _Ro			KEYWORD3
- _Voltage		KEYWORD3
- _bitADC		KEYWORD3
- _VRL			KEYWORD3
- _Rs			KEYWORD3
- _getDataRo		KEYWORD3
- _getDataRatio		KEYWORD3
- _m 			KEYWORD3
- _b 			KEYWORD3
- _ppm 			KEYWORD3
-
-
-========================================
