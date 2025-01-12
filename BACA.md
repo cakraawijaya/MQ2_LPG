@@ -17,9 +17,11 @@ Pustaka ini digunakan untuk membaca data gas LPG: propana (C3H8) dan butana (C4H
 
 • Cara mengkalibrasi bagian LPG pada sensor MQ-2: <a href="extras/articles/Cara Kalibrasi.md">Klik Disini</a>
 
-• Versi Pustaka: V1.0.0 (08-April-2023).
-
-• Fitur: Terdapat fungsi kalibrasi MQ-2 yang dinamis, sehingga memudahkan pengguna untuk membaca data gas, terutama LPG.
+• Fitur:<br>
+  1. Mendukung Arduino/ESP8266/ESP32.<br>
+  2. Kalibrasi MQ-2 dinamis.<br>
+  3. Kemampuan untuk membaca data gas LPG.<br>
+  4. Tersedia informasi tentang status gas LPG.
 
 <br><br>
 

@@ -6,34 +6,27 @@
 
 MQ2Sensor mq2(MQ2PIN); // create a new object with the name mq2 to hold the MQ2Sensor class
 
+#define RL 10 // 10K ohm
+#define Ro 0
+#define Volt 5.0
+#define ADC 1023.0 // maximum adc resolution on Arduino and ESP8266 development boards
+#define x 0
+#define x1 0
+#define x2 0
+#define y 0
+#define y1 0
+#define y2 0
+
 void setup() {
-  Serial.begin(9600); // default baudrate for the Arduino board
+  Serial.begin(9600); // default baudrate for the Arduino and ESP8266 development boards
   mq2.begin(); // initiate mq2 sensor
+
+  // set calibration
+  mq2.setCalibration(RL, Ro, Volt, ADC, x, x1, x2, y, y1, y2);
 }
 
-// gas calibration data
-#define RL_Value 10 // 10K ohm
-#define x1_Value 0
-#define x2_Value 0
-#define y1_Value 0
-#define y2_Value 0
-#define x_Value 0
-#define y_Value 0
-#define Voltage_Value 5.0
-#define bitADC_Value 1023.0 // development board adc resolution
-
-void calibration(){
-  mq2.RL(RL_Value); // resistance load setting
-  mq2.Volt(Voltage_Value); // voltage sensor setting
-  mq2.BitADC(bitADC_Value); // development board adc resolution setting
-  mq2.mCurve(x1_Value, x2_Value, y1_Value, y2_Value); // mCurve setting
-  mq2.bCurve(x_Value, y_Value); // bCurve setting
-  mq2.getCalibrationData(); // get data calibration
+void loop() {  
   mq2.viewCalibrationData(); // print to serial monitor: data calibration
-}
-
-void loop() {
-  calibration(); // calls calibration method
   delay(3000); // delay for 3 seconds
 }
 ```
