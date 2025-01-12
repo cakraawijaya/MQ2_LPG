@@ -2,7 +2,7 @@
 // By: Devan Cakra M.W
 
 #include "MQ2_LPG.h" // library declaration
-#define MQ2PIN A0 // mq2 pin declaration
+#define MQ2PIN 35 // mq2 pin declaration
 
 MQ2Sensor mq2(MQ2PIN); // create a new object with the name mq2 to hold the MQ2Sensor class
 
