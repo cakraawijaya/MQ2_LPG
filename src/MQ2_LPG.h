@@ -12,7 +12,6 @@ class MQ2Sensor {
     MQ2Sensor(uint8_t pin);
     void begin();
     void setCalibration(float RL, float Ro, float Volt, float ADC, double x, double x1, double x2, double y, double y1, double y2);
-    void saveCalibrationData();
     void loadCalibrationData();
     float readGas();
     void viewCalibrationData();
