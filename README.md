@@ -17,7 +17,7 @@ This library is used to read the LPG gas data: propane (C3H8) and butane (C4H10)
 
 • How to calibrate the LPG part of the MQ-2 sensor: <a href="extras/articles/How To Calibration.md">Click Here</a><br><br>
 
-• Feature:<br>
+• Available features:<br>
   1. Support Arduino/ESP8266/ESP32.<br>
   2. Dynamically calibrate MQ-2.<br>
   3. Ability to read LPG gas data.<br>
