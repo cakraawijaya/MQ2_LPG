@@ -16,12 +16,6 @@ MQ2Sensor::MQ2Sensor(uint8_t pin) {
 void MQ2Sensor::begin() {
   pinMode(_pin, INPUT); // set the sensor pin as input
   EEPROM.begin(EEPROM_SIZE); // starting EEPROM with specified size
-  
-  // if the EEPROM fails to initialize, display an error message and stop the program
-  if (!EEPROM.begin(EEPROM_SIZE)) {
-    Serial.println("Gagal inisialisasi EEPROM");
-    while (true);
-  }
 }
 
 // save calibration data to EEPROM
