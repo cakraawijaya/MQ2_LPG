@@ -108,6 +108,6 @@ void MQ2Sensor::viewCalibrationData() {
 
 // display gas concentration data to the serial monitor
 void MQ2Sensor::viewGasData() {
-  Serial.print("Gas Concentration: "); Serial.print(_ppm); Serial.println("ppm"); // gas concentration
-  Serial.println(_ppm > 310 ? "Status: Danger" : "Status: Safe\n"); // status based on thresholds
+  Serial.print("\nGas Concentration: "); Serial.print(_ppm); Serial.println("ppm"); // gas concentration
+  Serial.println(_ppm > 310 ? "Status: Danger" : "Status: Safe"); // status based on thresholds
 }
