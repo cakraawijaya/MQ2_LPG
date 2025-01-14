@@ -35,7 +35,7 @@ void loop() {
 
 <div align="justify">
   
-<i>After the Ro data is obtained, the next step is to enter the Ro data into the #define section.</i>
+<i>After the Ro data is obtained, the next step is to enter the Ro data into the #define section. An example is seen below :</i>
 
 ```ino
 #define Ro_Value 6.31
@@ -55,19 +55,19 @@ void loop() {
 
 <i>Then choose a plot type: ``` 2D (X-Y) Plot ```. Then click ``` Align Axes ``` → ``` Proceed ```.</i>
 
-<img src="../documentation/experiment/Plot Type.jpg" alt="plot-type"><br>
+<img src="../documentation/experiment/Plot Type.jpg" alt="plot-type"><br><br>
 
 <i>Next, you must provide a value limit, starting from ``` X1 → X2 → Y1 → Y2 ```. Then click ``` Complete! ``` to set the ``` X-Axis ``` and ``` Y-Axis ```. Don't forget to tick the ``` Log Scale ``` → ``` OK ``` section.</i>
   
-<img src="../documentation/experiment/Axes Calibration.jpg" alt="axes-calibration"><br>
+<img src="../documentation/experiment/Axes Calibration.jpg" alt="axes-calibration"><br><br>
 
 <i>In the next step, click ``` Add Point (A) ```, then select the desired curve (in this case using only LPG and Propane). Don't forget to look for coordinate points that overlap each other as shown in the following image.</i>
 
-<img src="../documentation/experiment/Add Point.jpg" alt="add-point"><br>
+<img src="../documentation/experiment/Add Point.jpg" alt="add-point"><br><br>
 
 <i>Then, click ``` View Data ``` to find out the value of the coordinate point that was selected earlier. For example, as shown in the image below.</i>
 
-<img src="../documentation/experiment/View Data.jpg" alt="view-data"><br>
+<img src="../documentation/experiment/View Data.jpg" alt="view-data"><br><br>
 
 <i>In the final step, the coordinate data above is then entered into the code in the #define section of the Arduino IDE.</i>
 
@@ -79,7 +79,6 @@ void loop() {
 #define x_Value 497.4177875376839
 #define y_Value 1.0876679972710004
 ```
-
 <br>
   
   Then upload the program.&nbsp;&nbsp;&nbsp;<strong>~ DONE... , GOOD LUCK</strong> ~
