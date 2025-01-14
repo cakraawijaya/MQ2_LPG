@@ -22,7 +22,7 @@ void setup() {
   mq2.begin(); // initiate mq2 sensor
 
   // set calibration
-  mq2.setCalibration(RL, Ro, Volt, ADC, x, x1, x2, y, y1, y2);
+  mq2.setCalibration(RL, Ro, Volt, ADC, x, x1, x2, y, y1, y2); // comment if you have calibrated
 }
 
 void loop() {  
