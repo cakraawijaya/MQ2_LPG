@@ -7,7 +7,7 @@
 MQ2Sensor mq2(MQ2PIN); // create a new object with the name mq2 to hold the MQ2Sensor class
 
 #define RL 100 // 100K ohm
-#define Ro 6.02
+#define Ro 5.46
 #define Volt 5.0
 #define ADC 4095.0 // maximum adc resolution on ESP32 development boards
 #define x 497.4177875376839
