@@ -35,7 +35,7 @@ void loop() {
 
 <div align="justify">
 
-Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro tersebut ke bagian #define.
+Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro tersebut ke bagian #define. Contohnya terlihat di bawah ini :
 
 ```ino
 #define Ro_Value 6.31
@@ -59,17 +59,25 @@ Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro te
   
   Selanjutnya, anda harus memberikan batas nilai, mulai dari ``` X1 → X2 → Y1 → Y2 ```. Selanjutnya klik ``` Complete! ``` untuk mengatur ``` X-Axis ``` dan ``` Y-Axis ```. Jangan lupa untuk mencentang bagian ``` Log Scale ``` → ``` OK ```.
 
+<br>
+
 <img src="../documentation/experiment/Axes Calibration.jpg" alt="axes-calibration"><br>
   
   Langkah berikutnya, klik ``` Add Point (A) ```, lalu pilih kurva yang diinginkan (dalam hal ini hanya menggunakan LPG dan Propane). Jangan lupa cari titik koordinat yang saling berhimpitan satu sama lain seperti yang ditampilkan pada gambar berikut.
+
+<br>
 
 <img src="../documentation/experiment/Add Point.jpg" alt="add-point"><br>
   
   Kemudian, klik ``` View Data ``` untuk mengetahui nilai dari titik koordinat yang telah dipilih tadi. Misalnya seperti yang terlihat pada gambar di bawah ini.
 
+<br>
+
 <img src="../documentation/experiment/View Data.jpg" alt="view-data"><br>
   
   Langkah terakhir, data koordinat diatas kemudian dimasukkan kedalam kode yang ada di Arduino IDE bagian #define.
+
+<br>
 
 ```ino
 #define x1_Value 199.150007852152
@@ -79,8 +87,6 @@ Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro te
 #define x_Value 497.4177875376839
 #define y_Value 1.0876679972710004
 ```
-
-<br>
   
   Lalu unggah program.&nbsp;&nbsp;&nbsp;<strong>~ SELESAI... , SELAMAT MENCOBA</strong> ~
 
