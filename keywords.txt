@@ -15,11 +15,11 @@
  begin			KEYWORD2
  setCalibration		KEYWORD2
  loadCalibrationData	KEYWORD2
- readGas		KEYWORD2
- viewCalibrationData	KEYWORD2
- viewGasData		KEYWORD2
  VRL			KEYWORD2
  roCheck		KEYWORD2
  ratioCheck		KEYWORD2
  mCurve 		KEYWORD2
  bCurve 		KEYWORD2
+ readGas		KEYWORD2
+ viewCalibrationData	KEYWORD2
+ viewGasData		KEYWORD2
