@@ -54,30 +54,33 @@ void MQ2Sensor::loadCalibrationData() {
 }
 
 // calculating the output voltage VRL
-void MQ2Sensor::VRL() {
+float MQ2Sensor::VRL() {
   _VRL = analogRead(_pin) * (_Volt / (_ADC)); // output voltage from sensor
+  return _VRL;
 }
 
 // calculating of Ro based on VRL and RL
-void MQ2Sensor::roCheck() {
+float MQ2Sensor::roCheck() {
   _Rs = (((_Volt / (_VRL)) - 1) * (_RL)); // resistance of sensor: -1K ohm
   _DataRo = _Rs / 9.6; // Ro reference value
+  return _DataRo;
 }
 
 // calculating the ratio of Rs/Ro
-void MQ2Sensor::ratioCheck() {
+float MQ2Sensor::ratioCheck() {
   _Rs = ((_Volt * (_RL)) / (_VRL)) - (_RL); // resistance of sensor
   _DataRatio = _Rs / _Ro; // ratio resistance of sensor / Ro
+  return _DataRatio;
 }
 
 // calculating the slope of a logarithmic curve
-void MQ2Sensor::mCurve() {
-  _m = (log(_y2) - log(_y1)) / (log(_x2) - log(_x1)); // slope of the curve
+float MQ2Sensor::mCurve() {
+  return _m = (log(_y2) - log(_y1)) / (log(_x2) - log(_x1)); // slope of the curve
 }
 
 // calculating the intercept of a logarithmic curve
-void MQ2Sensor::bCurve() {
-  _b = log(_y) - (_m) * log(_x); // intercept of the curve
+float MQ2Sensor::bCurve() {
+  return _b = log(_y) - (_m) * log(_x); // intercept of the curve
 }
 
 // read gas concentration in ppm
