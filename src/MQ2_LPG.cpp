@@ -97,6 +97,7 @@ float MQ2Sensor::readGas() {
 
 // display calibration data to the serial monitor
 void MQ2Sensor::viewCalibrationData() {
+  loadCalibrationData(); // load calibration data
   Serial.println("\nRo Value: " + String(_DataRo)); // Ro Value
   Serial.println("Rs/Ro Value: " + String(_DataRatio)); // Rs/Ro Ratio
   Serial.println("m Value: " + String(_m)); // slope of the curve
