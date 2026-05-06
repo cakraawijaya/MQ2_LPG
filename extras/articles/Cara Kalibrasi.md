@@ -6,34 +6,27 @@
 
 MQ2Sensor mq2(MQ2PIN); // create a new object with the name mq2 to hold the MQ2Sensor class
 
+#define RL 10 // 10K ohm
+#define Ro 0
+#define Volt 5.0
+#define ADC 1023.0 // maximum adc resolution on Arduino and ESP8266 development boards
+#define x 0
+#define x1 0
+#define x2 0
+#define y 0
+#define y1 0
+#define y2 0
+
 void setup() {
-  Serial.begin(9600); // default baudrate for the Arduino board
+  Serial.begin(9600); // default baudrate for the Arduino and ESP8266 development boards
   mq2.begin(); // initiate mq2 sensor
+
+  // set calibration
+  mq2.setCalibration(RL, Ro, Volt, ADC, x, x1, x2, y, y1, y2);
 }
 
-// gas calibration data
-#define RL_Value 10 // 10K ohm
-#define x1_Value 0
-#define x2_Value 0
-#define y1_Value 0
-#define y2_Value 0
-#define x_Value 0
-#define y_Value 0
-#define Voltage_Value 5.0
-#define bitADC_Value 1023.0 // development board adc resolution
-
-void calibration(){
-  mq2.RL(RL_Value); // resistance load setting
-  mq2.Volt(Voltage_Value); // voltage sensor setting
-  mq2.BitADC(bitADC_Value); // development board adc resolution setting
-  mq2.mCurve(x1_Value, x2_Value, y1_Value, y2_Value); // mCurve setting
-  mq2.bCurve(x_Value, y_Value); // bCurve setting
-  mq2.getCalibrationData(); // get data calibration
+void loop() {  
   mq2.viewCalibrationData(); // print to serial monitor: data calibration
-}
-
-void loop() {
-  calibration(); // calls calibration method
   delay(3000); // delay for 3 seconds
 }
 ```
@@ -42,7 +35,7 @@ void loop() {
 
 <div align="justify">
 
-Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro tersebut ke bagian #define.
+Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro tersebut ke bagian #define. Contohnya terlihat di bawah ini :
 
 ```ino
 #define Ro_Value 6.31
@@ -52,7 +45,7 @@ Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro te
 
 ## Mencari Titik Koordinat Yang Sesuai
   
-  Bukalah link berikut: <a href="https://automeris.io/WebPlotDigitizer/">WebPlotDigitizer</a> , lalu klik ``` Launch Now! ```. Kemudian klik ``` Load Image ```. Hal tersebut dapat anda ketahui selengkapnya di bawah ini.
+  Bukalah link berikut: <a href="https://automeris.io/WebPlotDigitizer/">WebPlotDigitizer</a> , lalu klik ``` Launch Now! ```. Kemudian klik ``` Load Image ```. Hal tersebut dapat anda ketahui lengkapnya di bawah ini.
 
 <img src="../documentation/experiment/Load Image.jpg" alt="load-image">
   
@@ -62,19 +55,19 @@ Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro te
   
   Kemudian memilih tipe plot: ``` 2D (X-Y) Plot ```. Selanjutnya klik ``` Align Axes ``` → ``` Proceed ```.
 
-<img src="../documentation/experiment/Plot Type.jpg" alt="plot-type"><br>
+<img src="../documentation/experiment/Plot Type.jpg" alt="plot-type"><br><br>
   
   Selanjutnya, anda harus memberikan batas nilai, mulai dari ``` X1 → X2 → Y1 → Y2 ```. Selanjutnya klik ``` Complete! ``` untuk mengatur ``` X-Axis ``` dan ``` Y-Axis ```. Jangan lupa untuk mencentang bagian ``` Log Scale ``` → ``` OK ```.
 
-<img src="../documentation/experiment/Axes Calibration.jpg" alt="axes-calibration"><br>
+<img src="../documentation/experiment/Axes Calibration.jpg" alt="axes-calibration"><br><br>
   
   Langkah berikutnya, klik ``` Add Point (A) ```, lalu pilih kurva yang diinginkan (dalam hal ini hanya menggunakan LPG dan Propane). Jangan lupa cari titik koordinat yang saling berhimpitan satu sama lain seperti yang ditampilkan pada gambar berikut.
 
-<img src="../documentation/experiment/Add Point.jpg" alt="add-point"><br>
+<img src="../documentation/experiment/Add Point.jpg" alt="add-point"><br><br>
   
   Kemudian, klik ``` View Data ``` untuk mengetahui nilai dari titik koordinat yang telah dipilih tadi. Misalnya seperti yang terlihat pada gambar di bawah ini.
 
-<img src="../documentation/experiment/View Data.jpg" alt="view-data"><br>
+<img src="../documentation/experiment/View Data.jpg" alt="view-data"><br><br>
   
   Langkah terakhir, data koordinat diatas kemudian dimasukkan kedalam kode yang ada di Arduino IDE bagian #define.
 
@@ -86,7 +79,6 @@ Setelah data Ro didapatkan, maka langkah selanjutnya yaitu memasukkan data Ro te
 #define x_Value 497.4177875376839
 #define y_Value 1.0876679972710004
 ```
-
 <br>
   
   Lalu unggah program.&nbsp;&nbsp;&nbsp;<strong>~ SELESAI... , SELAMAT MENCOBA</strong> ~
